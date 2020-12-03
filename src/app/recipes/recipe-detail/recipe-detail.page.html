@@ -1,0 +1,39 @@
+<ion-header [translucent]="true" class="ion-no-border">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button text="Recipes" defaultHref="/"></ion-back-button>
+    </ion-buttons>
+    <ion-buttons slot="end">
+      <ion-button (click)="like()">
+        <ion-icon #heartIcon name="heart"></ion-icon>
+      </ion-button>
+      <ion-button color="primary" *ngIf="recipe"> //
+        Edit
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true" *ngIf="recipe">
+  <ion-row>
+    <ion-col class="content-col">
+      <ion-thumbnail class="user-image">
+        <img [src]="recipe.imgPath" alt="image du recette">
+      </ion-thumbnail>
+      <ion-text color="dark">
+        <h2 class="user-name">{{ recipe.name }}</h2>
+      </ion-text>
+
+      <ion-list>
+        <ion-item>
+          <ion-label position="stacked">Ingredients: </ion-label>
+          <ion-input color="primary" readonly="true">{{recipe.ingredients}}</ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label position="stacked">Notes: </ion-label>
+          <ion-input color="primary" readonly="true">{{recipe.notes}}</ion-input>
+        </ion-item>
+      </ion-list>
+    </ion-col>
+  </ion-row>
+</ion-content>

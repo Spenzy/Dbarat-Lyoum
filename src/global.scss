@@ -24,3 +24,20 @@
 @import "~@ionic/angular/css/text-alignment.css";
 @import "~@ionic/angular/css/text-transformation.css";
 @import "~@ionic/angular/css/flex-utils.css";
+
+/*Adding custom font for titles*/
+@import url('https://fonts.googleapis.com/css2?family=Nerko+One&display=swap');
+/*Adding custom font for text*/
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+
+.title {
+  font-size: 2rem;
+  font-family: 'Nerko One', cursive;
+}
+p {
+  font-size: 1rem;
+  font-family:'Roboto', sans-serif;
+}
+.bg-light{
+  --background: url(./assets/light-bg.jpg) 30% 0%/200% 100% no-repeat;
+}

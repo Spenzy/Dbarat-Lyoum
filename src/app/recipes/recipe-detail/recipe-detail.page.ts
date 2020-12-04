@@ -9,10 +9,13 @@ import {Recipe} from "../recipes.service";
 export class RecipeDetailPage implements OnInit {
     recipe: Recipe;
 
+
   constructor() { }
 
   ngOnInit() {
   }
+
+
 
   like() {
 

@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import {Recipe} from "./recipes.service";
+import {Recipe, RecipesService} from "./recipes.service";
 
 @Component({
   selector: 'app-recipes',
@@ -8,10 +8,17 @@ import {Recipe} from "./recipes.service";
 })
 export class RecipesPage implements OnInit {
   recipes:Recipe[];
+  dummy = {"id": "id","imgPath": "./assets/avatar.svg","name": "test","ingredients": ["A","B","C"],"ntoe": "note"};
 
-  constructor() { }
+  constructor(private rs:RecipesService) { }
 
   ngOnInit() {
+    this.rs.setRecipe("recipes", this.dummy).then(r => console.log(r))
+    this.rs.getRecipe("recipes").then(r => console.log(r))
   }
 
+  setDummy() {
+    this.rs.setRecipe("recipes", this.dummy).then(r => console.log(r))
+    this.rs.getRecipe("recipes").then(r => console.log(r))
+  }
 }
